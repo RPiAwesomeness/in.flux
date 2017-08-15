@@ -1,10 +1,6 @@
 package lexer
 
-import (
-	"fmt"
-
-	"github.com/RPiAwesomeness/in.flux/token"
-)
+import "github.com/RPiAwesomeness/in.flux/token"
 
 // Lexer keeps track of the information needed to lex out a given string
 type Lexer struct {
@@ -124,7 +120,6 @@ func (l *Lexer) NextToken() token.Token {
 	}
 
 	l.readChar()
-	fmt.Println(tok)
 	return tok
 }
 
