@@ -19,9 +19,15 @@ const (
 	INT   = "INT"   // 1, 23, 42, 991290
 
 	// Operators
-	ASSIGN = "="
-	PLUS   = "+"
-	MINUS  = "-"
+	ASSIGN    = "="
+	PLUS      = "+"
+	MINUS     = "-"
+	BANG      = "!"
+	ASTERISK  = "*"
+	BACKSLASH = "/"
+
+	LT = "<"
+	GT = ">"
 
 	// Delimiters
 	COMMA     = ","
@@ -37,11 +43,23 @@ const (
 	// Keywords
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
+	TRUE     = "TRUE"
+	FALSE    = "FALSE"
+	IF       = "IF"
+	ELSE     = "ELSE"
+	RETURN   = "RETURN"
+	EQ       = "=="
+	NEQ      = "!="
 )
 
 var keywords = map[string]TokenType{
-	"fn":  FUNCTION,
-	"let": LET,
+	"fn":     FUNCTION,
+	"let":    LET,
+	"true":   TRUE,
+	"false":  FALSE,
+	"if":     IF,
+	"else":   ELSE,
+	"return": RETURN,
 }
 
 // LookupIdent checks the keywords map to see if there are any matching language reserved keywords that match
